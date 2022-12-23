@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ambient_indication"
-    android:layout_width="match_parent"
+    android:id="@id/ambient_indication"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:forceHasOverlappingRendering="false"
-    android:layout_marginBottom="71.0dip"
     android:orientation="vertical"
     android:paddingTop="8.0dip">
+	
+    <ImageView
+        android:id="@id/docked_top_icon"
+        android:layout_width="@dimen/dock_logo_min_size"
+        android:layout_height="@dimen/dock_logo_min_size"
+        android:clickable="true"
+        android:cropToPadding="true"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="@dimen/dock_top_logo_margin"
+        android:padding="@dimen/dock_top_logo_padding"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="wrap_content"

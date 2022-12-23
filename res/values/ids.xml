@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <item type="id" name="ambient_indication"/>
+    <item type="id" name="docked_top_icon"/>
+</resources>
+
