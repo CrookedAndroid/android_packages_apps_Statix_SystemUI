@@ -78,6 +78,7 @@ import com.google.android.systemui.smartspace.dagger.SmartspaceGoogleModule;
 import com.google.android.systemui.statusbar.NotificationLockscreenUserManagerGoogle;
 
 import com.statix.android.systemui.assist.StatixAssistManager;
+import com.statix.android.systemui.assist.StatixAssistModule;
 import com.statix.android.systemui.biometrics.FingerprintInteractiveToAuthProviderImpl;
 import com.statix.android.systemui.controls.StatixControlsTileResourceConfigurationImpl;
 import com.statix.android.systemui.power.dagger.StatixPowerModule;
