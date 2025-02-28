@@ -12,9 +12,6 @@
 
     <original-package android:name="com.android.systemui" />
 
-    <!-- Circle to Search -->
-    <uses-permission android:name="android.permission.ACCESS_CONTEXTUAL_SEARCH" />
-
     <!-- DataSwitch tile -->
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
 
