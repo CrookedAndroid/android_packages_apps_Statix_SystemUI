@@ -34,7 +34,6 @@ import com.android.systemui.media.muteawait.MediaMuteAwaitConnectionCli;
 import com.android.systemui.media.nearby.NearbyMediaDevicesManager;
 import com.android.systemui.navigationbar.NavigationBarControllerModule;
 import com.android.systemui.navigationbar.gestural.GestureModule;
-import com.android.systemui.plugins.BcSmartspaceDataPlugin;
 import com.android.systemui.plugins.qs.QSFactory;
 import com.android.systemui.qs.dagger.QSModule;
 import com.android.systemui.reardisplay.RearDisplayModule;
@@ -72,10 +71,6 @@ import com.android.systemui.unfold.SysUIUnfoldStartableModule;
 import com.android.systemui.unfold.UnfoldTransitionModule;
 import com.android.systemui.volume.dagger.VolumeModule;
 import com.android.systemui.wallpapers.dagger.WallpaperModule;
-
-import com.google.android.systemui.smartspace.BcSmartspaceDataProvider;
-import com.google.android.systemui.smartspace.dagger.SmartspaceGoogleModule;
-import com.google.android.systemui.statusbar.NotificationLockscreenUserManagerGoogle;
 
 import com.statix.android.systemui.assist.StatixAssistManager;
 import com.statix.android.systemui.assist.StatixAssistModule;
@@ -137,8 +132,6 @@ import javax.inject.Named;
             SceneContainerFrameworkModule.class,
             ScreenDecorationsModule.class,
             ShadeModule.class,
-            SmartspaceGoogleModule.class,
-            StatixAssistModule.class,
             StatixStartCentralSurfacesModule.class,
             StatixPowerModule.class,
             StatixQSModule.class,
@@ -161,7 +154,7 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     abstract NotificationLockscreenUserManager bindNotificationLockscreenUserManager(
-            NotificationLockscreenUserManagerGoogle notificationLockscreenUserManager);
+            NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);
 
     @Provides
     @SysUISingleton
@@ -243,10 +236,4 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     abstract AssistManager bindAssistManager(StatixAssistManager assistManager);
-
-    @Provides
-    @SysUISingleton
-    static BcSmartspaceDataPlugin provideBcSmartspaceDataPlugin() {
-        return new BcSmartspaceDataProvider();
-    }
 }

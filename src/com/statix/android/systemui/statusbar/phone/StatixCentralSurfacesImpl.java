@@ -110,9 +110,6 @@ import com.android.systemui.volume.VolumeComponent;
 import com.android.wm.shell.bubbles.Bubbles;
 import com.android.wm.shell.startingsurface.StartingSurface;
 
-import com.google.android.systemui.smartspace.SmartSpaceController;
-import com.google.android.systemui.statusbar.NotificationLockscreenUserManagerGoogle;
-
 import com.statix.android.systemui.statusbar.KeyguardIndicationControllerStatix;
 
 import dagger.Lazy;
@@ -126,9 +123,6 @@ import javax.inject.Provider;
 
 @SysUISingleton
 public class StatixCentralSurfacesImpl extends CentralSurfacesImpl {
-
-    private final SmartSpaceController mSmartSpaceController;
-    private final NotificationLockscreenUserManagerGoogle mNotificationLockscreenUserManagerGoogle;
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     @Inject
@@ -162,7 +156,7 @@ public class StatixCentralSurfacesImpl extends CentralSurfacesImpl {
             @UiBackground Executor uiBgExecutor,
             ShadeSurface shadeSurface,
             NotificationMediaManager notificationMediaManager,
-            NotificationLockscreenUserManagerGoogle lockScreenUserManager,
+            NotificationLockscreenUserManager lockScreenUserManager,
             NotificationRemoteInputManager remoteInputManager,
             QuickSettingsController quickSettingsController,
             BatteryController batteryController,
@@ -237,8 +231,7 @@ public class StatixCentralSurfacesImpl extends CentralSurfacesImpl {
             BrightnessMirrorShowingInteractor brightnessMirrorShowingInteractor,
             GlanceableHubContainerController glanceableHubContainerController,
             EmergencyGestureIntentFactory emergencyGestureIntentFactory,
-            ViewCaptureAwareWindowManager viewCaptureAwareWindowManager,
-            SmartSpaceController smartSpaceController) {
+            ViewCaptureAwareWindowManager viewCaptureAwareWindowManager) {
         super(
                 context,
                 notificationsController,
@@ -344,13 +337,5 @@ public class StatixCentralSurfacesImpl extends CentralSurfacesImpl {
                 glanceableHubContainerController,
                 emergencyGestureIntentFactory,
                 viewCaptureAwareWindowManager);
-
-        mSmartSpaceController = smartSpaceController;
-        mNotificationLockscreenUserManagerGoogle = lockScreenUserManager;
-    }
-    @Override
-    public void start() {
-        super.start();
-        mNotificationLockscreenUserManagerGoogle.updateSmartSpaceVisibilitySettings();
     }
 }

@@ -13,9 +13,6 @@ import com.android.systemui.dagger.SystemUIModule;
 import com.android.systemui.keyguard.CustomizationProvider;
 import com.android.systemui.statusbar.NotificationInsetsModule;
 import com.android.systemui.statusbar.QsFrameTranslateModule;
-
-import com.google.android.systemui.smartspace.KeyguardSmartspaceStartable;
-
 import com.statix.android.systemui.dagger.SystemUIStatixCoreStartableModule;
 
 import dagger.Subcomponent;
@@ -44,8 +41,6 @@ public interface SysUIComponentStatix extends SysUIComponent {
     interface Builder extends SysUIComponent.Builder {
         SysUIComponentStatix build();
     }
-
-    KeyguardSmartspaceStartable createKeyguardSmartspaceController();
 
     /**
      * Member injection into the supplied argument.
