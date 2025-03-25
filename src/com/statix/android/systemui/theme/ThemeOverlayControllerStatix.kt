@@ -25,6 +25,7 @@ import com.android.systemui.statusbar.policy.ConfigurationController.Configurati
 import com.android.systemui.statusbar.policy.DeviceProvisionedController
 import com.android.systemui.theme.ThemeOverlayApplier
 import com.android.systemui.theme.ThemeOverlayController
+import com.android.systemui.tuner.TunerService
 import com.android.systemui.util.kotlin.JavaAdapter
 import com.android.systemui.util.settings.SecureSettings
 import java.util.concurrent.Executor
@@ -52,6 +53,7 @@ constructor(
   keyguardTransitionInteractor: KeyguardTransitionInteractor,
   uiModeManager: UiModeManager,
   private val configurationController: ConfigurationController,
+  tunerService: TunerService,
   activityManager: ActivityManager,
 ) :
   ThemeOverlayController(
@@ -74,6 +76,7 @@ constructor(
     keyguardTransitionInteractor,
     uiModeManager,
     activityManager,
+	tunerService,
     configurationController	
   ) {
 
