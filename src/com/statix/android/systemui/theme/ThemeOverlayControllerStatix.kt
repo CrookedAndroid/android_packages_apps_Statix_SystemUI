@@ -74,6 +74,7 @@ constructor(
     keyguardTransitionInteractor,
     uiModeManager,
     activityManager,
+    configurationController	
   ) {
 
   private val darkConfigurationListener =
